@@ -18,7 +18,12 @@ export default function App() {
 
     function generateParagraph(e) {
         e.preventDefault()
-        fetchData(number);
+        //* it is always recommended to put the fetch in try catch block
+        try {
+            fetchData(number);
+        } catch (error) {
+            console.log(error)
+        }
         setDispay(true);
     }
 
